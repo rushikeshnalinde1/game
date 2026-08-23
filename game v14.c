@@ -32,6 +32,7 @@ void tft_send_data_buffer(uint8_t *data, size_t length);
 void tft_fill_screen(uint16_t color);
 void tft_fill_rect(uint16_t x0, uint16_t y0, uint16_t width, uint16_t height, uint16_t color);
 
+//player structure
 typedef struct
 {
   int16_t x, y;
@@ -40,6 +41,7 @@ typedef struct
   bool grounded;
 } Player;
 
+//enemy structure
 typedef struct
 {
   int16_t x, y;

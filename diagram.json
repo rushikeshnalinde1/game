@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "author": "Rushikesh Nalinde",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 81.55,
+      "left": -188.2,
+      "rotate": 180,
+      "attrs": { "builder": "pico-sdk" }
+    },
+    {
+      "type": "wokwi-ili9341",
+      "id": "lcd1",
+      "top": 59.9,
+      "left": -599.6,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 373.8,
+      "left": -630.6,
+      "rotate": 90,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 373.8,
+      "left": -534.6,
+      "rotate": 90,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 373.8,
+      "left": -573,
+      "rotate": 90,
+      "attrs": { "color": "black", "xray": "1" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "lcd1:VCC", "pico:3V3", "red", [ "h-19.2", "v-38.4", "h48", "v-153.6" ] ],
+    [ "lcd1:GND", "pico:GND.4", "black", [ "h307.2", "v-134.4" ] ],
+    [ "lcd1:CS", "pico:GP17", "#8f4814", [ "h-28.8", "v-48", "h76.8", "v-259.2" ] ],
+    [ "pico:GP16", "lcd1:MISO", "gold", [ "v0", "h-20.4", "v-9.6", "h105.6", "v96" ] ],
+    [ "lcd1:D/C", "pico:GP20", "blue", [ "h0" ] ],
+    [ "lcd1:MOSI", "pico:GP19", "green", [ "h48", "v-249.59" ] ],
+    [ "lcd1:RST", "pico:GP21", "violet", [ "h48", "v-249.6" ] ],
+    [ "lcd1:SCK", "pico:GP18", "white", [ "h48", "v-249.59" ] ],
+    [ "btn1:2.r", "pico:GP14", "gold", [ "v60.6", "h492.4", "v-384" ] ],
+    [ "btn2:2.r", "pico:GP15", "green", [ "v48.2", "h451", "v-374.4" ] ],
+    [ "pico:GND.8", "btn2:1.r", "black", [ "h-10.8", "v182.4", "h-259.2" ] ],
+    [ "pico:GND.8", "btn1:1.r", "black", [ "h-49.2", "v249.6", "h-326.4" ] ],
+    [ "pico:GND.8", "btn3:1.r", "black", [ "h-87.6", "v288", "h-240" ] ],
+    [ "pico:GP13", "btn3:2.r", "green", [ "h57.6", "v441.6", "h-470.4" ] ]
+  ],
+  "dependencies": {}
+}
